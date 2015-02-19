@@ -4,8 +4,8 @@
 define('ROOTDIR', dirname(__DIR__));
 
 // Router
-require ROOTDIR . '/Router.php';
-require ROOTDIR . '/App.php';
+require ROOTDIR . '/app/Router.php';
+require ROOTDIR . '/app/App.php';
 
 // Init router
 $router = new Router();

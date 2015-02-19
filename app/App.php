@@ -14,7 +14,7 @@ class App
 
     public function actionIndex()
     {
-        $body = file_get_contents(ROOTDIR . '/views/index.html');
+        $body = file_get_contents(ROOTDIR . '/app/views/index.html');
         $this->echoResponse($body, 200, array('Content-Type' => 'text/html'));
     }
 
