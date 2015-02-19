@@ -1,14 +1,18 @@
 # URL Shortener
 
----
-
 Simple URL shortener.
+
+## How to deploy?
+
+- Clone this repo
+- Configure web server
+- Configure database
 
 ## Server configuration
 
 Sample config for Nginx:
 
-```
+```nginx
 server {
     server_name urlshortener.dev;
     root '/var/www/urlshortener/public';
@@ -31,11 +35,11 @@ server {
 
 Schema script for MySQL:
 
-```
-SET NAMES utf8;
+```sql
+SET NAMES utf8mb4;
 
 DROP DATABASE IF EXISTS `urlshortener`;
-CREATE DATABASE `urlshortener`
+CREATE DATABASE `urlshortener`;
 USE `urlshortener`;
 
 DROP TABLE IF EXISTS `urls`;
@@ -43,14 +47,12 @@ CREATE TABLE `urls` (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `short` varchar(7) DEFAULT NULL,
   `url` varchar(2048) NOT NULL,
-  `normalizedUrl` varchar(2048) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
 ## License
 
-```
 The MIT License (MIT)
 
 Copyright (c) 2015 acelot
@@ -72,4 +74,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
