@@ -2,6 +2,11 @@
 
 Simple URL shortener.
 
+## Requirements
+
+- PHP 5.3
+- PDO extension
+
 ## How to deploy?
 
 - Clone this repo
